@@ -47,19 +47,19 @@
             <img class="ksr-logo" src="/assets/images/logo.png">KSR Trackday Rentals
           </a>
           <!--
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto navbar-right">
-              <li class="nav-item"><a class="nav-link js-scroll-trigger" data-toggle="collapse" href="#bikes">Bikes</a></li>
-              <li class="nav-item"><a class="nav-link js-scroll-trigger" data-toggle="collapse" href="#what">Preparation</a></li>
-              <li class="nav-item"><a class="nav-link js-scroll-trigger" data-toggle="collapse" href="#date">Dates & Location</a></li>
-              <li class="nav-item"><a class="nav-link js-scroll-trigger" data-toggle="collapse" href="#pricing">Pricing</a></li>
-              <li class="nav-item"><a class="nav-link js-scroll-trigger" data-toggle="collapse" href="#faqs">FAQs</a></li>
-              <li class="nav-item"><a class="nav-link js-scroll-trigger" data-toggle="collapse" href="/reserve">Reserve</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" data-toggle="collapse" href="#bikes">Bikes</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" data-toggle="collapse" href="#what">Preparation</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" data-toggle="collapse" href="#date">Dates & Location</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" data-toggle="collapse" href="#pricing">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" data-toggle="collapse" href="#faqs">FAQs</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" data-toggle="collapse" href="/reserve">Reserve</a></li>
             </ul>
-          </div>
+            </div>
           -->
         </div>
       </nav><!-- Navbar End -->
@@ -67,8 +67,8 @@
       <!-- Pricing Tables -->
       <div id="pricing" class="reserving pricing-section text-center">
         <div class="container-s">
+          <form action="https://formspree.io/moqdyeng" method="POST">
 
-          <form>
             <!-- start -->
             <div class="row">
             </div>
@@ -90,7 +90,7 @@
                     <div class="sub_span">/ per trackday</div>
                   </div>
                   <label class="btn btn-primary btn-action">
-                    <input type="radio" name="bike" id="cbr250r" autocomplete="off" required> Choose me
+                    <input value="cbr250r" type="radio" name="bike" id="cbr250r" autocomplete="off" required> Choose me
                   </label>
                   <div class="sub_deposit">* $500 damage insurance deducatable deposit required. More details on the liability forms.</div>
                 </div>
@@ -106,7 +106,7 @@
                     <div class="sub_span">/ per trackday</div>
                   </div>
                   <label class="btn btn-primary btn-action">
-                    <input type="radio" name="bike" id="r3" autocomplete="off"> Choose me
+                    <input value="r3" type="radio" name="bike" id="r3" autocomplete="off"> Choose me
                   </label>
                   <div class="sub_deposit">* $700 damage insurance deducatable deposit required. More details on the liability forms.</div>
                 </div>
@@ -123,7 +123,7 @@
                     <div class="sub_span">/ per trackday</div>
                   </div>
                   <label class="btn btn-primary btn-action">
-                    <input type="radio" name="bike" id="gsxr750" autocomplete="off"> Choose me
+                    <input value="gsxr750" type="radio" name="bike" id="gsxr750" autocomplete="off"> Choose me
                   </label>
                   <div class="sub_deposit">* $1000 damage insurance deducatable deposit required. More details on the liability forms.</div>
                 </div>
@@ -137,9 +137,18 @@
             </div>
 
             <div class="form-row">
-              <select class="form-control form-control-lg" required>
+              <select name="date" class="form-control form-control-lg" required>
                 <option value="" selected disabled>Please select a date</option>
-                <option>Monday</option>
+                <option value="Friday May 22">Friday May 22</option>
+                <option value="Monday June 15">Monday June 15</option>
+                <option value="Monday June 22">Monday June 22</option>
+                <option value="Monday July 6">Monday July 6</option>
+                <option value="Monday July 20">Monday July 20</option>
+                <option value="Monday July 27">Monday July 27</option>
+                <option value="Monday August 24">Monday August 24</option>
+                <option value="Monday September 7">Monday September 7</option>
+                <option value="Monday September 28">Monday September 28</option>
+                <option value="Saturday October 10">Saturday October 10</option>
               </select>
             </div>
 
@@ -154,18 +163,18 @@
               <div class="form-row">
                 <div class="col-md-12 mb-3">
                   <label for="email">Email</label>
-                  <input type="text" class="form-control" id="email" name="_replyto" placeholder="Your email" required>
+                  <input type="email" class="form-control" id="email" name="_replyto" placeholder="Your email" required>
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="col-md-6 mb-3">
                   <label for="validationDefault01">First name</label>
-                  <input type="text" class="form-control" id="validationDefault01" placeholder="First name" required>
+                  <input name="first" type="text" class="form-control" id="validationDefault01" placeholder="First name" required>
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="validationDefault02">Last name</label>
-                  <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" required>
+                  <input name="last" type="text" class="form-control" id="validationDefault02" placeholder="Last name" required>
                 </div>
               </div>
               <div class="form-row">
@@ -193,13 +202,13 @@
 
                 <div class="form-row">
                   <label class="btn btn-dark" for="defaultCheck1">
-                    <input class="" type="checkbox" value="" id="defaultCheck1" required>
+                    <input value="true" name="acknowledged" class="" type="checkbox" id="defaultCheck1" required>
                     I've acknowledged the above conditions
                   </label>
                 </div>
                 <br>
                 <div class="form-row">
-                  <input class="btn btn-primary" type="submit" value="Submit">
+                  <input class="btn btn-primary" type="submit" value="Send">
                 </div>
 
               </div>
