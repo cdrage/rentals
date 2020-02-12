@@ -3543,6 +3543,12 @@ ul#countdown li {
 }
 
 .ack {
-  padding-right: 10px;
-    padding-left: 10px;
+  display:block;
+}
+
+.row {
+  margin:0 !important;
+}
+.container-fluid {
+  padding:0 !important;
 }
