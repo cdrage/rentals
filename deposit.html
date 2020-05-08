@@ -4,8 +4,8 @@
 
     <!-- Metadata -->
     <meta charset="utf-8">
-    <title>Payment - KSR Trackday Motorcyle Rentals in Ontario Canada</title>
-    <meta name="title" content="Payment - KW Sportbike Rentals at Grand Bend Motorplex">
+    <title>Deposit & Waivers - KSR Trackday Motorcyle Rentals in Ontario Canada</title>
+    <meta name="title" content="Deposit & Waivers - KW Sportbike Rentals at Grand Bend Motorplex">
 
     <!-- Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -77,161 +77,85 @@
       <div class="container">
 
         <div id="payment" class="payment home-3"><!-- Hero Section-->
-            <div class="flex-intro align-center wow fadeIn">
-              <h2>Ninja 400 Rental Payment</h2>
-              <p>Almost there! Pick the bike you've chosen to rent.</p>
-            </div>
-            <div class="row">
-
-              <div class="col-md-5">
-                <div class="hero-img">
-                  <img class="img-fluid" src="assets/images/ninja400.png" alt="">
-                </div>
-              </div>
-
-              <div class="col-md-7">
-                <div class="hero-content wow fadeIn">
-                  <div class="hero-content-inner">
-                    <h4>OEM Kawasaki Ninja 400</h4>
-                    <p>
-										<b>Costs:</b>
-										<br>
-$199 - OEM Kawasaki Ninja 400 Trackday Rental
-<br>
-$149 - KSR Trackday Rental
-<br>
-<br>
-<b>Total:</b>
-$348
-<br>
-<br>
-<br>
-<!-- Load Stripe.js on your website. -->
-<script src="https://js.stripe.com/v3"></script>
-
-<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
-<button
-    style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-      id="checkout-button-sku_HEKVDm0GYgy47j"
-        role="link"
-        >
-         Click here to pay for the OEM Kawasaki Ninja 400 rental
-</button>
-
-  <div id="error-message"></div>
-
-  <script>
-    (function() {
-        var stripe = Stripe('pk_live_6gd8U5XDL1m6MQoC8HA6AqS600yJN5WoaD');
-
-        var checkoutButton = document.getElementById('checkout-button-sku_HEKVDm0GYgy47j');
-        checkoutButton.addEventListener('click', function () {
-              // When the customer clicks on the button, redirect
-              // them to Checkout.
-                stripe.redirectToCheckout({
-                        items: [{sku: 'sku_HEKVDm0GYgy47j', quantity: 1}],
-                        
-                        // Do not rely on the redirect to the successUrl for fulfilling
-                        // purchases, customers may not always reach the success_url after
-                        // a successful payment.
-                        // Instead use one of the strategies described in
-                        // https://stripe.com/docs/payments/checkout/fulfillment
-                        successUrl: window.location.protocol + '//ksr.rentals/deposit',
-                        cancelUrl: window.location.protocol + '//ksr.rentals/payment',
-                      })
-              .then(function (result) {
-                      if (result.error) {
-                                // If `redirectToCheckout` fails due to a browser or network
-                                // error, display the localized error message to your customer.
-                                  var displayError = document.getElementById('error-message');
-                                displayError.textContent = result.error.message;
-                              }
-                    });
-            });
-    })();
-</script>
-                    </p>
-                  </div>
-                </div>
-              </div>
-						</div>
-
-            <div class="row">
-              <div class="col-md-7">
-                <div class="hero-content wow fadeIn">
-                  <div class="hero-content-inner">
-                    <h4>Race Kawasaki Ninja 400</h4>
-                    <p>
-										<b>Costs:</b>
-										<br>
-$249 - Race Kawasaki Ninja 400 Trackday Rental
-<br>
-$149 - KSR Trackday Rental
-<br>
-<br>
-<b>Total:</b>
-$398
-<br>
-<br>
-<br>
-<!-- Load Stripe.js on your website. -->
-<script src="https://js.stripe.com/v3"></script>
-
-<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
-<button
-    style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-      id="checkout-button-sku_HF5oG7pyTvmadC"
-        role="link"
-        >
-         Click here to pay for the Race Kawasaki Ninja 400 Rental 
-</button>
-
-  <div id="error-message"></div>
-
-  <script>
-    (function() {
-        var stripe = Stripe('pk_live_6gd8U5XDL1m6MQoC8HA6AqS600yJN5WoaD');
-
-        var checkoutButton = document.getElementById('checkout-button-sku_HF5oG7pyTvmadC');
-        checkoutButton.addEventListener('click', function () {
-              // When the customer clicks on the button, redirect
-              // them to Checkout.
-                stripe.redirectToCheckout({
-                        items: [{sku: 'sku_HF5oG7pyTvmadC', quantity: 1}],
-                        
-                        // Do not rely on the redirect to the successUrl for fulfilling
-                        // purchases, customers may not always reach the success_url after
-                        // a successful payment.
-                        // Instead use one of the strategies described in
-                        // https://stripe.com/docs/payments/checkout/fulfillment
-                        successUrl: window.location.protocol + '//ksr.rentals/deposit',
-                        cancelUrl: window.location.protocol + '//ksr.rentals/payment',
-                      })
-              .then(function (result) {
-                      if (result.error) {
-                                // If `redirectToCheckout` fails due to a browser or network
-                                // error, display the localized error message to your customer.
-                                  var displayError = document.getElementById('error-message');
-                                displayError.textContent = result.error.message;
-                              }
-                    });
-            });
-    })();
-</script>
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-5">
-                <div class="">
-                  <img class="img-fluid" src="assets/images/ninja400race.png" alt="Race Ninja 400">
-                </div>
-              </div>
-
+          <div class="flex-intro align-center wow fadeIn">
+            <h2>Deposit & Waivers</h2>
+            <p>Just some last minute things at the track and you're ready to rent!</p>
           </div>
-        </div><!-- Hero End -->
-</div>
+          <div class="row">
+
+            <div class="offset-md-3 col-md-6">
+              <div class="hero-content wow fadeIn">
+                <div class="hero-content-inner">
+                  <h4>Deposit for the rental</h4>
+                  <p>
+                  The deposit is due the <b>day before</b> the rental. Don't worry about paying this now until the <b>day before</b> the trackday.
+                  <br>
+                  <br>
+                  <!-- Load Stripe.js on your website. -->
+<script src="https://js.stripe.com/v3"></script>
+
+<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+<button
+  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+  id="checkout-button-sku_HEKWIEjfBuSiBe"
+  role="link"
+>
+ Click here to pay the deposit. 
+</button>
+
+<div id="error-message"></div>
+
+<script>
+(function() {
+  var stripe = Stripe('pk_live_6gd8U5XDL1m6MQoC8HA6AqS600yJN5WoaD');
+
+  var checkoutButton = document.getElementById('checkout-button-sku_HEKWIEjfBuSiBe');
+  checkoutButton.addEventListener('click', function () {
+    // When the customer clicks on the button, redirect
+    // them to Checkout.
+    stripe.redirectToCheckout({
+      items: [{sku: 'sku_HEKWIEjfBuSiBe', quantity: 1}],
+      
+      // Do not rely on the redirect to the successUrl for fulfilling
+      // purchases, customers may not always reach the success_url after
+      // a successful payment.
+      // Instead use one of the strategies described in
+      // https://stripe.com/docs/payments/checkout/fulfillment
+      successUrl: window.location.protocol + '//ksr.rentals/',
+      cancelUrl: window.location.protocol + '//ksr.rentals/deposit',
+    })
+    .then(function (result) {
+      if (result.error) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer.
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+})();
+</script><Paste>
+                  </p>
+<br>
+<br>
+                  <h4>Waivers</h4>
+                  <p>
+You will be signing multiple waivers at the track. If you'd like to look at them before, click on the below links:
+<br>
+<br>
+• <a href="/assets/waivers/ksr.pdf" target="_blank">KSR Trackday Motorcycle Rentals liability form</a>
+<br>
+• <a href="/assets/waivers/grandbend.pdf" target="_blank">Grand Bend Motorplex liability form</a>
+<br>
+									</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div><!-- Hero End -->
+    </div>
 
 
     <!-- CTA Signup -->
