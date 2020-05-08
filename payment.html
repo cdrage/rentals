@@ -65,146 +65,166 @@
       </nav><!-- Navbar End -->
     </div>
 
-    <!-- Pricing Tables -->
+
     <div id="pricing" class="reserving pricing-section text-center">
       <div class="container">
-        <form action="https://formspree.io/moqdyeng" method="POST">
 
-          <!-- start -->
-          <div class="row">
-          </div>
-
-          <div class="row">
-            <div class="pricing-intro">
-              <h1>1. Pick a bike</h1>
+        <div id="payment" class="payment home-3"><!-- Hero Section-->
+            <div class="flex-intro align-center wow fadeIn">
+              <h2>Ninja 400 Rental Payment</h2>
+              <p>Almost there! Pick the bike you've chosen to rent.</p>
             </div>
-          </div>
+            <div class="row">
 
-          <div class="row">
-
-            <div class="col-md-6">
-              <div class="table-left">
-                <h3>OEM Kawasaki Ninja 400</h3>
-                <img class="bike-fluid" src="/assets/images/ninja400.png" alt="Kawasaki Ninja 400">
-                <div class="pricing-details">
-                  <span>$199</span>
-                  <div class="sub_note">Plus $149 trackday fee</div>
-                  <div class="sub_span">/ per trackday</div>
+              <div class="col-md-5">
+                <div class="hero-img">
+                  <img class="img-fluid" src="assets/images/ninja400.png" alt="">
                 </div>
-                <label class="btn btn-primary btn-action">
-                  <input value="oemninja400" type="radio" name="bike" id="oemninja400" autocomplete="off"> Choose me
-                </label>
-                <div class="sub_deposit">* $800 damage insurance deducatable deposit required. More details on the liability forms.</div>
               </div>
-            </div>
 
-            <div class="col-md-6">
-              <div class="table-left">
-                <h3>Race Kawasaki Ninja 400</h3>
-                <img class="bike-fluid" src="/assets/images/ninja400race.png" alt="Kawasaki Ninja 400">
-                <div class="pricing-details">
-                  <span>$249</span>
-                  <div class="sub_note">Plus $149 trackday fee</div>
-                  <div class="sub_span">/ per trackday</div>
+              <div class="col-md-7">
+                <div class="hero-content wow fadeIn">
+                  <div class="hero-content-inner">
+                    <h4>OEM Kawasaki Ninja 400</h4>
+                    <p>
+										<b>Costs:</b>
+										<br>
+$199 - OEM Kawasaki Ninja 400 Trackday Rental
+<br>
+$149 - KSR Trackday Rental
+<br>
+<br>
+<b>Total:</b>
+$348
+<br>
+<br>
+<br>
+<!-- Load Stripe.js on your website. -->
+<script src="https://js.stripe.com/v3"></script>
+
+<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+<button
+    style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+      id="checkout-button-sku_HEKVDm0GYgy47j"
+        role="link"
+        >
+         Click here to pay for the OEM Kawasaki Ninja 400 rental
+</button>
+
+  <div id="error-message"></div>
+
+  <script>
+    (function() {
+        var stripe = Stripe('pk_live_6gd8U5XDL1m6MQoC8HA6AqS600yJN5WoaD');
+
+        var checkoutButton = document.getElementById('checkout-button-sku_HEKVDm0GYgy47j');
+        checkoutButton.addEventListener('click', function () {
+              // When the customer clicks on the button, redirect
+              // them to Checkout.
+                stripe.redirectToCheckout({
+                        items: [{sku: 'sku_HEKVDm0GYgy47j', quantity: 1}],
+                        
+                        // Do not rely on the redirect to the successUrl for fulfilling
+                        // purchases, customers may not always reach the success_url after
+                        // a successful payment.
+                        // Instead use one of the strategies described in
+                        // https://stripe.com/docs/payments/checkout/fulfillment
+                        successUrl: window.location.protocol + '//ksr.rentals/success',
+                        cancelUrl: window.location.protocol + '//ksr.rentals/canceled',
+                      })
+              .then(function (result) {
+                      if (result.error) {
+                                // If `redirectToCheckout` fails due to a browser or network
+                                // error, display the localized error message to your customer.
+                                  var displayError = document.getElementById('error-message');
+                                displayError.textContent = result.error.message;
+                              }
+                    });
+            });
+    })();
+</script>
+                    </p>
+                  </div>
                 </div>
-                <label class="btn btn-primary btn-action">
-                  <input value="raceninja400" type="radio" name="bike" id="raceninja400" autocomplete="off"> Choose me
-                </label>
-                <div class="sub_deposit">* $800 damage insurance deducatable deposit required. More details on the liability forms.</div>
               </div>
-            </div>
+						</div>
 
-          </div>
+            <div class="row">
+              <div class="col-md-7">
+                <div class="hero-content wow fadeIn">
+                  <div class="hero-content-inner">
+                    <h4>Race Kawasaki Ninja 400</h4>
+                    <p>
+										<b>Costs:</b>
+										<br>
+$249 - Race Kawasaki Ninja 400 Trackday Rental
+<br>
+$149 - KSR Trackday Rental
+<br>
+<br>
+<b>Total:</b>
+$398
+<br>
+<br>
+<br>
+<!-- Load Stripe.js on your website. -->
+<script src="https://js.stripe.com/v3"></script>
 
-          <div class="row">
-            <div class="pricing-intro">
-              <h1>2. Choose a date</h1>
-            </div>
-          </div>
+<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+<button
+    style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+      id="checkout-button-sku_HF5oG7pyTvmadC"
+        role="link"
+        >
+         Click here to pay for the Race Kawasaki Ninja 400 Rental 
+</button>
 
-          <div class="form-row">
-            <select name="date" class="form-control form-control-lg" required>
-              <option value="" selected disabled>Please select a date</option>
-              <option value="Friday May 22 GB">Friday May 22, 2020 - Grand Bend Motorplex - 2 Spots</option>
-              <option value="Monday June 15 GB">Monday June 15, 2020 - Grand Bend Motorplex - 2 Spots</option>
-              <option value="Monday June 22 GB">Monday June 22, 2020 - Grand Bend Motorplex - 2 Spots</option>
-              <option value="Monday July 6 GB">Monday July 6, 2020 - Grand Bend Motorplex - 2 Spots</option>
-              <option value="Monday July 20 GB">Monday July 20, 2020 - Grand Bend Motorplex - 2 Spots</option>
-              <option value="Monday July 27 GB">Monday July 27, 2020 - Grand Bend Motorplex - 2 Spots</option>
-              <option value="Monday August 24 GB">Monday August 24, 2020 - Grand Bend Motorplex - 2 Spots</option>
-              <option value="Monday September 7 GB">Monday September 7, 2020 - Grand Bend Motorplex - 2 Spots</option>
-              <option value="Monday September 28 GB">Monday September 28, 2020 - Grand Bend Motorplex - 2 Spots</option>
-              <option value="Saturday October 10 GB">Saturday October 10, 2020 - Grand Bend Motorplex - 2 Spots</option>
-            </select>
-          </div>
+  <div id="error-message"></div>
 
-          <div class="row signup-spacing">
-            <div class="pricing-intro">
-              <h1>3. Fill out your information</h1>
-            </div>
-          </div>
+  <script>
+    (function() {
+        var stripe = Stripe('pk_live_6gd8U5XDL1m6MQoC8HA6AqS600yJN5WoaD');
 
-          <div class="fillout">
-
-            <div class="form-row">
-              <div class="col-md-12 mb-3">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="_replyto" placeholder="Your email" required>
+        var checkoutButton = document.getElementById('checkout-button-sku_HF5oG7pyTvmadC');
+        checkoutButton.addEventListener('click', function () {
+              // When the customer clicks on the button, redirect
+              // them to Checkout.
+                stripe.redirectToCheckout({
+                        items: [{sku: 'sku_HF5oG7pyTvmadC', quantity: 1}],
+                        
+                        // Do not rely on the redirect to the successUrl for fulfilling
+                        // purchases, customers may not always reach the success_url after
+                        // a successful payment.
+                        // Instead use one of the strategies described in
+                        // https://stripe.com/docs/payments/checkout/fulfillment
+                        successUrl: window.location.protocol + '//ksr.rentals/success',
+                        cancelUrl: window.location.protocol + '//ksr.rentals/canceled',
+                      })
+              .then(function (result) {
+                      if (result.error) {
+                                // If `redirectToCheckout` fails due to a browser or network
+                                // error, display the localized error message to your customer.
+                                  var displayError = document.getElementById('error-message');
+                                displayError.textContent = result.error.message;
+                              }
+                    });
+            });
+    })();
+</script>
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <div class="form-row">
-              <div class="col-md-6 mb-3">
-                <label for="validationDefault01">First name</label>
-                <input name="first" type="text" class="form-control" id="validationDefault01" placeholder="First name" required>
+              <div class="col-md-5">
+                <div class="">
+                  <img class="img-fluid" src="assets/images/ninja400race.png" alt="Race Ninja 400">
+                </div>
               </div>
-              <div class="col-md-6 mb-3">
-                <label for="validationDefault02">Last name</label>
-                <input name="last" type="text" class="form-control" id="validationDefault02" placeholder="Last name" required>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col-md-12 mb-3">
-                <label for="phone">Phone number</label>
-                <input type="text" class="form-control" id="phone" name="phone" placeholder="123-456-7890" required>
-              </div>
-            </div>
-          </div>
-
-          <div class="pricing-intro ack row signup-spacing">
-            <h1>4. Acknowledgment</h1>
-            <div class="form-row">
-              <p class="ack-txt">
-              • Filling out the form does not reserve your spot until a deposit has been made.
-              <br>
-              • After submission, a representative will be in contact with regards to further details / payments. 
-              <br>
-              • Full-refunds / cancellations are accepted more than 2 weeks prior to the event.
-              <br>
-              • A release of liability, replacement parts list as well as a waiver will be signed prior to the event.
-              </p>
-            </div>
-
-            <div class="form-row">
-              <label class="btn btn-dark" for="defaultCheck1">
-                <input value="true" name="acknowledged" class="" type="checkbox" id="defaultCheck1" required>
-                I've read the above
-              </label>
-            </div>
-            <br>
-            <div class="form-row">
-              <input class="btn btn-primary" type="submit" value="Send">
-            </div>
 
           </div>
-
-      </div>
-
-      <input type="hidden" name="_next" value="https://ksr.rent/"/>
-        </form>
-
-        <!-- end -->
-    </div>
+        </div><!-- Hero End -->
+</div>
 
 
     <!-- CTA Signup -->
