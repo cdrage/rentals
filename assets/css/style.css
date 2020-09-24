@@ -3568,3 +3568,8 @@ font-weight: 700;
 .payment .row {
 margin-top:50px !important;
 }
+
+.announcement {
+  font-weight:600;
+  margin:1em;
+}
